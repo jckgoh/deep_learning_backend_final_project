@@ -14,7 +14,7 @@ app = FastAPI(
 # Allow frontend access (React, HTML, etc.)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://deep-learning-frontend-final-projec.vercel.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -36,3 +36,4 @@ async def predict(file: UploadFile = File(...)):
         "prediction": result["class"],
         "confidence": result["confidence"]
     }
+
